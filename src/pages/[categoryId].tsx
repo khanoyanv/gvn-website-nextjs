@@ -3,22 +3,16 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { CATEGORY_DATA } from "@/constants/data";
 
-interface ProductDetailsProps {
-  categoryData: {
-    [key: string]: {
-      title: string;
-      subtitle: string;
-      description: string;
-      images: string[];
-      features: string[];
-    };
-  };
-}
-
-const CategoryPage: React.FC<ProductDetailsProps> = () => {
+const CategoryPage = () => {
   const { query } = useRouter();
-  const { categoryId } = query;
-  const category = CATEGORY_DATA[categoryId];
+  const categoryId = Array.isArray(query.categoryId)
+    ? query.categoryId[0]
+    : query.categoryId;
+
+  const category =
+    categoryId && categoryId in CATEGORY_DATA
+      ? CATEGORY_DATA[categoryId as keyof typeof CATEGORY_DATA]
+      : null;
 
   const [mainImage, setMainImage] = useState<string>(category?.images[0] || "");
 
