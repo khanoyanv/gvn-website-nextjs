@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 
 interface CardProps {
   imageUrl: string;

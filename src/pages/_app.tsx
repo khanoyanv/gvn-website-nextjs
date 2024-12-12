@@ -5,10 +5,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import "/styles/globals.css";
+import { AppProps } from "next/app";
 
 const cache = createCache({ key: "css" });
 
-function MyApp({ Component, pageProps }: any) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <CacheProvider value={cache}>
