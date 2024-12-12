@@ -48,11 +48,11 @@ const Header: React.FC = () => {
         <Link href="/#home" className={"navbarLink"}>
           Home
         </Link>
-        <Link href="/#about" className={"navbarLink"}>
-          About
-        </Link>
         <Link href="/#products" className={"navbarLink"}>
           Products
+        </Link>
+        <Link href="/#about" className={"navbarLink"}>
+          About
         </Link>
         <Link
           href="/#contacts"
