@@ -10,7 +10,7 @@ const MainPage = () => {
     <>
       <Head>
         <title>GVN Pro</title>
-        <link rel="icon" href="/gvn-logo.jpg" />
+        <link rel="icon" href="/gvnpro.png" />
       </Head>
       <Hero />
       <Creator />

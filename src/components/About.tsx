@@ -13,7 +13,7 @@ export const About = () => {
         <h2 className={"title"}>About Us</h2>
         <p
           className={"description"}
-          style={{ color: "#1f509a", fontSize: "24px" }}
+          // style={{ color: "#1f509a", fontSize: "24px" }}
         >
           GVN PRO company was founded in 2019 and is actively operating in
           Yerevan, it specializes in professional audio, photo and video, media

@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import { phoneNumber } from "@/constants/contactInfo";
+import { publicKey, serviceID, templateID } from "@/constants/mailApiData";
 
 export const Contacts: React.FC = () => {
-  const handleSubmit = () => {
-    alert("handling logic will be added");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.send(serviceID, templateID, formData, publicKey);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send email. Please try again later.");
+    }
+  };
+
   return (
     <section id={"contacts"} className={"contactContainer"}>
       <div className={"formContainer"}>
@@ -12,30 +37,46 @@ export const Contacts: React.FC = () => {
         <form className={"contactForm"} onSubmit={handleSubmit}>
           <label className={"formLabel"}>
             Name *
-            <input type="text" placeholder="Jane Smith" className={"input"} />
+            <input
+              type="text"
+              name="name"
+              placeholder="Jane Smith"
+              className={"input"}
+              value={formData.name}
+              onChange={handleChange}
+            />
           </label>
           <label className={"formLabel"}>
             Email address *
             <input
               type="email"
+              name="email"
               placeholder="email@example.com"
               className={"input"}
+              value={formData.email}
+              onChange={handleChange}
             />
           </label>
           <label className={"formLabel"}>
             Phone number *
-            <input type="tel" placeholder="093-333-333" className={"input"} />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="093-333-333"
+              className={"input"}
+              value={formData.phone}
+              onChange={handleChange}
+            />
           </label>
           <label className={"formLabel"}>
             Message
-            <textarea placeholder="" className={"textarea"}></textarea>
-          </label>
-          <label className={"checkboxContainer"}>
-            <input type="checkbox" className={"checkbox"} />
-            <span>
-              I allow this website to store my submission so they can respond to
-              my inquiry. *
-            </span>
+            <textarea
+              name="message"
+              placeholder=""
+              className={"textarea"}
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
           </label>
           <button type="submit" className={"submitButton"}>
             Submit
@@ -46,10 +87,13 @@ export const Contacts: React.FC = () => {
         <div className={"contactDetails"}>
           <h4>Get in touch</h4>
           <p>
-            📧 <a href="mailto:info@gvn.com">info@gvnpro.com</a>
+            <strong>Mail:</strong>{" "}
+            <a href="mailto:info@gvn.com">info@gvnpro.com</a>
           </p>
-          <p>📍 Yerevan, Ye, AM</p>
-          <p>{`+(374) 44 201 788`}</p>
+          <p>
+            <strong>Location:</strong> <label>Yerevan, Ye, AM</label>
+          </p>
+          <p>{phoneNumber}</p>
           <h4>Hours</h4>
           <p>Monday - Saturday: 10:00am - 20:00pm</p>
           <p>Sunday: 13:00pm - 18:00pm</p>

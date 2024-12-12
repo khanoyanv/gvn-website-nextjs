@@ -1,5 +1,7 @@
-import React from "react";
+/* eslint-disable @next/next/no-img-element */
+import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { CATEGORY_DATA } from "@/constants/data";
 
 interface ProductDetailsProps {
   categoryData: {
@@ -13,43 +15,12 @@ interface ProductDetailsProps {
   };
 }
 
-const categoryData = {
-  "dslr-camera": {
-    title: "Professional DSLR Camera",
-    subtitle: "Capture stunning images with top-notch features.",
-    description:
-      "This professional DSLR camera offers advanced features that cater to photographers of all levels.",
-    images: ["/camera.jpg", "/camera.jpg", "/camera.jpg"],
-    features: [
-      "24.2 MP resolution for high-quality photos",
-      "4K video recording capabilities",
-      "Built-in Wi-Fi and Bluetooth connectivity",
-    ],
-  },
-  tripod: {
-    title: "Heavy-Duty Tripod",
-    subtitle: "Experience unmatched stability with our Heavy-Duty Tripod.",
-    description: "This tripod offers unmatched stability and durability.",
-    images: ["/tripod.jpg", "/tripod.jpg", "/tripod.jpg"],
-    features: ["Sturdy aluminum build", "360-degree pan head"],
-  },
-  "led-light-kit": {
-    title: "LED Video Light Kit",
-    subtitle: "Brighten your projects with our LED Video Light Kit.",
-    description:
-      "A premium LED video light kit designed for videographers and photographers.",
-    images: ["/light-kit.jpg", "/light-kit.jpg", "/light-kit.jpg"],
-    features: [
-      "Adjustable brightness levels",
-      "Compact and portable design",
-      "Includes multiple color filters",
-    ],
-  },
-};
-
 const CategoryPage: React.FC<ProductDetailsProps> = () => {
   const { query } = useRouter();
   const { categoryId } = query;
+  const category = CATEGORY_DATA[categoryId];
+
+  const [mainImage, setMainImage] = useState<string>(category?.images[0] || "");
 
   if (!categoryId || typeof categoryId !== "string") {
     return (
@@ -58,8 +29,6 @@ const CategoryPage: React.FC<ProductDetailsProps> = () => {
       </div>
     );
   }
-
-  const category = categoryData[categoryId];
 
   if (!category) {
     return (
@@ -78,31 +47,27 @@ const CategoryPage: React.FC<ProductDetailsProps> = () => {
       </div>
 
       <div className={"imagesContainer"}>
-        <img
-          src={category.images[0]}
-          alt={category.title}
-          className={"mainImage"}
-        />
+        <img src={mainImage} alt={category.title} className={"mainImage"} />
         <div className={"thumbnailContainer"}>
-          {category.images.slice(1).map((image: string, index: number) => (
+          {category.images.map((image: string, index: number) => (
             <img
               key={index}
               src={image}
               alt={`${category.title} ${index + 1}`}
               className={"thumbnail"}
+              onClick={() => setMainImage(image)}
+              style={{
+                cursor: "pointer",
+                border: mainImage === image ? "2px solid #000" : "none",
+              }}
             />
           ))}
         </div>
       </div>
 
       <div className={"infoContainer"}>
-        <h2>Product Information</h2>
+        <h2>General Information</h2>
         <p>{category.description}</p>
-        <ul className={"featuresList"}>
-          {category.features.map((feature: string, index: number) => (
-            <li key={index}>{feature}</li>
-          ))}
-        </ul>
       </div>
     </section>
   );
