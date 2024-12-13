@@ -9,7 +9,7 @@ const MainPage = () => {
   return (
     <>
       <Head>
-        <title>GVN Pro</title>
+        <title>GVN Pro - Capture Your Vision</title>
         <link rel="icon" href="/gvnpro.png" />
       </Head>
       <Hero />
