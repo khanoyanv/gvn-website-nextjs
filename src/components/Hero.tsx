@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
     <section id={"home"} className={"heroContainer"}>
       <div className={"heroImageContainer"} />
       <div className={"heroInfoContainer"}>
-        <h1>Capture your vision</h1>
+        <h1>Capture Your Vision</h1>
         <p>Elevate your photography with premium gear</p>
         <button className={"heroButton"} onClick={handleViewProducts}>
           View Products
