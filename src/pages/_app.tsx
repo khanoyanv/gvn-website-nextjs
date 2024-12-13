@@ -22,17 +22,26 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Welcome to GVN Pro, the best place in Armenia to find your desired professional technology."
         />
-        <meta property="og:image" content="/gvnpro-thumbnail.png" />
+        <meta
+          property="og:image"
+          content="https://gvnpro.com/gvnpro-thumbnail.png"
+        />
         <meta property="og:url" content="https://gvnpro.com" />
         <meta property="og:type" content="website" />
 
-        <meta name="twitter:card" content="/gvnpro-thumbnail.png" />
+        <meta
+          name="twitter:card"
+          content="https://gvnpro.com/gvnpro-thumbnail.png"
+        />
         <meta name="twitter:title" content="GVN Pro - Capture Your Vision" />
         <meta
           name="twitter:description"
           content="Welcome to GVN Pro, the best place in Armenia to find your desired professional technology."
         />
-        <meta name="twitter:image" content="/gvnpro-thumbnail.png" />
+        <meta
+          name="twitter:image"
+          content="https://gvnpro.com/gvnpro-thumbnail.png"
+        />
       </Head>
       <CacheProvider value={cache}>
         <Header />
