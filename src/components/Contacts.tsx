@@ -95,8 +95,7 @@ export const Contacts: React.FC = () => {
           </p>
           <p>{phoneNumber}</p>
           <h4>Hours</h4>
-          <p>Monday - Saturday: 10:00am - 20:00pm</p>
-          <p>Sunday: 13:00pm - 18:00pm</p>
+          <p>Monday - Saturday: 10:00am - 19:00pm</p>
         </div>
       </div>
     </section>
