@@ -113,6 +113,11 @@ footer {
   color: "#1f509a"
 }
 
+.descriptionLink {
+  text-decoration: none;
+  color: #e38e49;
+}
+
 .link {
   font-size: 1rem;
   color: #e38e49;
