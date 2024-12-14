@@ -38,6 +38,7 @@ export const Contacts: React.FC = () => {
           <label className={"formLabel"}>
             Name *
             <input
+              required={true}
               type="text"
               name="name"
               placeholder="Jane Smith"
@@ -49,6 +50,7 @@ export const Contacts: React.FC = () => {
           <label className={"formLabel"}>
             Email address *
             <input
+              required={true}
               type="email"
               name="email"
               placeholder="email@example.com"
@@ -58,7 +60,7 @@ export const Contacts: React.FC = () => {
             />
           </label>
           <label className={"formLabel"}>
-            Phone number *
+            Phone number
             <input
               type="tel"
               name="phone"

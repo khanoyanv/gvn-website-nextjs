@@ -11,14 +11,15 @@ export const About = () => {
         }}
       >
         <h2 className={"title"}>About Us</h2>
-        <p
-          className={"description"}
-          // style={{ color: "#1f509a", fontSize: "24px" }}
-        >
+        <p className={"description"}>
           GVN Pro company was founded in 2019 and is actively operating in
           Yerevan, it specializes in professional audio, photo and video, media
           equipment supply and sales. GVN Pro is the official representative of{" "}
-          <a href="http://www.univiso.tv/en/index.html" target="_blank" className='descriptionLink'>
+          <a
+            href="http://www.univiso.tv/en/index.html"
+            target="_blank"
+            className="descriptionLink"
+          >
             Univiso Technologies & Develop Ltd.
           </a>{" "}
           The company cooperates with the leading companies, manufacturers,
@@ -28,9 +29,6 @@ export const About = () => {
           companies in Armenia.
         </p>
       </div>
-      {/* <div className={"imageContainer"}>
-        <img src="/tools.jpg" alt="Photography gear" className={"image"} />
-      </div> */}
     </section>
   );
 };

@@ -72,10 +72,10 @@ export const CATEGORY_DATA = {
     description:
       "Achieve exceptional audio quality with our range of professional audio equipment, including microphones, headphones, recorders, and wireless systems. Designed for filmmakers, content creators, and audio professionals, our products deliver unmatched performance and precision. Whether you're capturing dialogue on set, recording in the studio, or broadcasting live, our equipment ensures clear, consistent, and high-fidelity sound. From compact solutions for portability to advanced systems for complex productions, our audio tools are built to meet the demands of professionals. Explore our collection to elevate the sound quality of your projects and ensure your audience hears every detail.",
     images: [
+      "/audio/audio3.jpg",
       "/audio/audio4.jpg",
       "/audio/audio1.jpg",
       "/audio/audio2.jpg",
-      "/audio/audio3.jpg",
       "/audio/audio5.jpg",
     ],
   },
