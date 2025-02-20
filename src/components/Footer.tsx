@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         <div className="footerContactInfoContainer"></div>
       </div>
 
-      <p>&copy; 2024 GVN Pro. All rights reserved.</p>
+      <p>&copy; 2025 GVN Pro. All rights reserved.</p>
     </footer>
   );
 };
