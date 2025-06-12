@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React, { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -19,45 +19,33 @@ const Header: React.FC = () => {
     }
 
     setLastScrollY(currentScrollY);
-  };
+  }, [lastScrollY]);
 
   const goToHome = () => {
-    router.push("/");
+    router.push('/');
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   return (
-    <header
-      className={`${"headerContainer"} ${
-        isVisible ? "headerVisible" : "headerHidden"
-      }`}
-    >
-      <img
-        src="/gvnprologocropped.png"
-        alt="GVN Pro Logo"
-        className="headerLogo"
-        onClick={goToHome}
-      />
-      <nav className={"navbarContainer"}>
-        <Link href="/#home" className={"navbarLink"}>
+    <header className={`${'headerContainer'} ${isVisible ? 'headerVisible' : 'headerHidden'}`}>
+      <img src="/gvnpro.png" alt="GVN Pro Logo" className="headerLogo" onClick={goToHome} />
+      <nav className={'navbarContainer'}>
+        <Link href="/#home" className={'navbarLink'}>
           Home
         </Link>
-        <Link href="/#products" className={"navbarLink"}>
+        <Link href="/#products" className={'navbarLink'}>
           Products
         </Link>
-        <Link href="/#about" className={"navbarLink"}>
+        <Link href="/#about" className={'navbarLink'}>
           About
         </Link>
-        <Link
-          href="/#contacts"
-          className={`${"headerContacts"} ${"navbarLink"}`}
-        >
+        <Link href="/#contacts" className={`${'headerContacts'} ${'navbarLink'}`}>
           Contact
         </Link>
       </nav>

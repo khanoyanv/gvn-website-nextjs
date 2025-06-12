@@ -36,6 +36,7 @@ footer {
   background-color: #333;
   color: #d4ebf8;
   text-align: center;
+  padding-top: 16px;
 }
 
 .footerTopRow {
@@ -51,12 +52,13 @@ footer {
 }
 
 .footerContactInfoContainer a, span {
-  color: #e38e49;
+  color: #136264;
   text-decoration: none;
 }
 
 .footerLogo {
   width: 20%;
+  object-fit: contain;
 }
 
 .aboutContainer {
@@ -78,14 +80,14 @@ footer {
 .subtitle {
   font-size: 1rem;
   font-weight: bold;
-  color: #e38e49;
+  color: #136264;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .title {
   margin-bottom: 1.5rem;
-  color: #e38e49;
+  color: #136264;
   line-height: 1.2;
   font-size: 2rem;
   font-weight: bold;
@@ -96,17 +98,17 @@ footer {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: "#1f509a"
+  color: "#7C9C94"
 }
 
 .descriptionLink {
   text-decoration: none;
-  color: #e38e49;
+  color: #136264;
 }
 
 .link {
   font-size: 1rem;
-  color: #e38e49;
+  color: #136264;
   text-decoration: none;
   font-weight: bold;
   border-bottom: 2px solid transparent;
@@ -114,7 +116,7 @@ footer {
 }
 
 .link:hover {
-  border-bottom: 2px solid #e38e49;
+  border-bottom: 2px solid #136264;
 }
 
 .imageContainer {
@@ -169,12 +171,12 @@ footer {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #1f509a;
+  color: #7C9C94;
   transition: color 0.3s ease;
 }
 
 .card .title:hover {
-  color: #e38e49;
+  color: #136264;
 }
 
 .card .description {
@@ -196,7 +198,7 @@ footer {
 }
 
 .productTitle {
-  color: #e38e49;
+  color: #136264;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -204,7 +206,7 @@ footer {
 
 .productSubtitle {
   font-size: 1.25rem;
-  color: #1f509a;
+  color: #7C9C94;
 }
 
 .imagesContainer {
@@ -279,13 +281,13 @@ footer {
 .contactContainer .subtitle {
   font-size: 1rem;
   font-weight: bold;
-  color: #e38e49;
+  color: #136264;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .contactContainer .title {
-  color: #0a3981;
+  color: #7C7C9C;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -301,7 +303,7 @@ footer {
 .formLabel {
   display: flex;
   flex-direction: column;
-  color: #1f509a;
+  color: #7C9C94;
   font-size: 1rem;
 }
 
@@ -330,8 +332,8 @@ footer {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background-color: #fff;
-  color: #e38e49;
-  border: 1px solid #e38e49;
+  color: #136264;
+  border: 1px solid #136264;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -339,7 +341,7 @@ footer {
 
 .submitButton:hover {
   color: #fff;
-  background-color: #e38e49;
+  background-color: #136264;
 }
 
 .infoContainer {
@@ -348,11 +350,11 @@ footer {
   align-items: center;
   flex: 1;
   margin-top: 2rem;
-  color: #0a3981;
+  color: #7C7C9C;
 }
 
 .infoContainer p {
-  color: #1f509a;
+  color: #7C9C94;
   width: 70%;
 }
 
@@ -366,11 +368,11 @@ footer {
 }
 
 .contactDetails {
-  color: #1f509a;
+  color: #7C9C94;
 }
 
 .contactDetailsLocation {
-  color: #e38e49 !important;
+  color: #136264 !important;
 }
 
 .contactDetails h4 {
@@ -385,7 +387,7 @@ footer {
 
 .contactDetails a {
   text-decoration: none;
-  color: #e38e49;
+  color: #136264;
   font-weight: bold;
 }
 
@@ -397,11 +399,11 @@ footer {
 .section .header {
   margin-bottom: 2rem;
   text-align: center;
-  color: #0a3981;
+  color: #7C7C9C;
 }
 
 .section .subtitle {
-  color: #e38e49;
+  color: #136264;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-size: 1rem;
@@ -471,7 +473,7 @@ footer {
 }
 
 .heroButton {
-  background-color: #e38e49;
+  background-color: #136264;
   color: #fff;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -503,8 +505,14 @@ footer {
 }
 
 .headerLogo {
-  width: 15%;
+  width: 150px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .headerLogo {
+    width: 150px;
+  }
 }
 
 .headerVisible {
@@ -530,39 +538,30 @@ footer {
   box-sizing: border-box;
   text-decoration: none;
   border: 3px solid transparent;
-  color: #e38e49;
+  color: #136264;
   padding: 0.5rem;
   font-size: 1.2rem;
   transition: color, border 0.3s ease;
 }
 
 .navbarLink:hover {
-  color: #e38e49;
-  border-bottom: 3px solid #e38e49;
-}
-
-.headerLogo {
-  color: #0a3981;
+  color: #136264;
+  border-bottom: 3px solid #136264;
 }
 
 .headerContacts {
-  padding: 1rem 1.5rem !important;
-  border: 2px solid #e38e49 !important;
+  border: 2px solid #136264 !important;
   border-radius: 0.2rem !important;
   transition: background-color 0.3s ease !important;
 }
 
 .headerContacts:hover {
-  background-color: #e38e49 !important;
+  background-color: #136264 !important;
   color: #d4ebf8 !important;
 }
 
 /* Media queries */
 @media (max-width: 768px) {
-  .headerLogo {
-    width: 35%;
-  }
-
   .navbarContainer {
     display: none;
   }
@@ -617,6 +616,10 @@ footer {
 
   .contactDetails {
     padding-left: 25%;
+  }
+
+  .footer {
+    padding-top: 0;
   }
 
   .footerTopRow {
