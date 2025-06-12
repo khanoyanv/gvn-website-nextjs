@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -34,7 +35,14 @@ const Header: React.FC = () => {
 
   return (
     <header className={`${'headerContainer'} ${isVisible ? 'headerVisible' : 'headerHidden'}`}>
-      <img src="/gvnpro.png" alt="GVN Pro Logo" className="headerLogo" onClick={goToHome} />
+      <Image
+        src="/gvnpro.png"
+        alt="GVN Pro Logo"
+        className="headerLogo"
+        onClick={goToHome}
+        width={150}
+        height={100}
+      />
       <nav className={'navbarContainer'}>
         <Link href="/#home" className={'navbarLink'}>
           Home
