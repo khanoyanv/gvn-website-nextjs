@@ -1,0 +1,138 @@
+.contactContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #e0e0e0;
+  padding: 4rem 2rem;
+  gap: 2rem;
+}
+
+.formContainer {
+  flex: 2;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #136264;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: #7C7C9C;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  color: #7C9C94;
+  font-size: 1rem;
+}
+
+.input {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.textarea {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  height: 100px;
+}
+
+.submitButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #136264;
+  border: 1px solid #136264;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  color: #fff;
+  background-color: #136264;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin-top: 2rem;
+  color: #7C7C9C;
+}
+
+.infoContainer p {
+  color: #7C9C94;
+  width: 70%;
+}
+
+.contactDetails {
+  color: #7C9C94;
+}
+
+.contactDetails h4 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contactDetails p {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.contactDetails a {
+  text-decoration: none;
+  color: #136264;
+  font-weight: bold;
+}
+
+.emailLink {
+  color: #136264;
+  font-weight: bold;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+  }
+
+  .infoContainer {
+    width: 100%;
+  }
+
+  .formContainer {
+    text-align: center;
+  }
+
+  .contactDetails {
+    padding-left: 25%;
+  }
+}
+
