@@ -2,9 +2,9 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 // import emailjs from 'emailjs-com';
 import { phoneNumber } from '@/constants/contactInfo';
 // import { publicKey, serviceID, templateID } from '@/constants/mailApiData';
-import { NotificationModal } from './NotificationModal';
+import NotificationModal from '../NotificationModal';
 
-export const Contacts = () => {
+const Contacts = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,7 +19,7 @@ export const Contacts = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     // TEMPORARILY DISABLED: Email sending disabled due to spam issues
@@ -60,7 +60,7 @@ export const Contacts = () => {
             Get in touch
           </h4>
           <h2 className="text-(--color-muted) text-2xl font-bold mb-8 leading-tight">
-            {"We'd love to hear from you!"}
+            We&apos;d love to hear from you!
           </h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <label className="flex flex-col text-(--color-secondary) text-base">
@@ -102,11 +102,10 @@ export const Contacts = () => {
               Message
               <textarea
                 name="message"
-                placeholder=""
                 className="mt-2 p-3 text-base border border-[#ddd] rounded-md outline-none resize-none h-[100px] bg-white"
                 value={formData.message}
                 onChange={handleChange}
-              ></textarea>
+              />
             </label>
             <button
               type="submit"
@@ -142,3 +141,5 @@ export const Contacts = () => {
     </>
   );
 };
+
+export default Contacts;

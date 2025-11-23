@@ -1,3 +1,60 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    // Prevent unused variables and imports
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "no-unused-vars": "off",
+    
+    // Suggest const for variables that are never reassigned
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    
+    // Disallow var, enforce let/const
+    "no-var": "error",
+    
+    // Best practices
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-debugger": "error",
+    "eqeqeq": ["error", "always"],
+    "no-else-return": "error",
+    "no-return-await": "error",
+    "require-await": "error",
+    "no-useless-return": "error",
+    
+    // React best practices
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-key": ["error", { "checkFragmentShorthand": true }],
+    "react/no-array-index-key": "warn",
+    "react/self-closing-comp": "error",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "never" }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    
+    // TypeScript best practices
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    
+    // Import organization
+    "import/no-duplicates": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-useless-path-segments": "error"
+  }
 }
+

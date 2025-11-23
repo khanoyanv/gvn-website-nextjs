@@ -1,8 +1,8 @@
-import { Creator } from '../components/Creator';
-import { Hero } from '../components/Hero';
-import { Products } from '../components/Products';
-import { Contacts } from '../components/Contacts';
-import { About } from '../components/About';
+import Creator from '../components/Creator/Creator';
+import Hero from '../components/Hero/Hero';
+import Products from '../components/Products/Products';
+import Contacts from '../components/Contacts/Contacts';
+import About from '../components/About';
 import Head from 'next/head';
 
 const MainPage = () => {
