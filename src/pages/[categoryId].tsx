@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
-import { useRouter } from "next/router";
-import { CATEGORY_DATA } from "@/constants/data";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import { CATEGORY_DATA } from '@/constants/data';
 
 const CategoryPage = () => {
   const { query } = useRouter();
@@ -14,54 +14,53 @@ const CategoryPage = () => {
       ? CATEGORY_DATA[categoryId as keyof typeof CATEGORY_DATA]
       : null;
 
-  const [mainImage, setMainImage] = useState<string>(category?.images[0] || "");
+  const [mainImage, setMainImage] = useState<string>(category?.images[0] || '');
 
-  if (!categoryId || typeof categoryId !== "string") {
+  if (!categoryId || typeof categoryId !== 'string') {
     return (
-      <div className={"notFound"}>
-        <h2>Loading...</h2>
+      <div className="text-center mt-16 p-8 bg-red-100 rounded-lg text-red-800 shadow-md">
+        <h2 className="text-3xl font-bold mb-4">Loading...</h2>
       </div>
     );
   }
 
   if (!category) {
     return (
-      <div className={"notFound"}>
-        <h2>Category not found</h2>
-        <p>The category you are looking for does not exist.</p>
+      <div className="text-center mt-16 p-8 bg-red-100 rounded-lg text-red-800 shadow-md">
+        <h2 className="text-3xl font-bold mb-4">Category not found</h2>
+        <p className="text-base">The category you are looking for does not exist.</p>
       </div>
     );
   }
 
   return (
-    <section className={"productDetailsContainer"}>
-      <div className={"header"}>
-        <h1 className={"productTitle"}>{category.title}</h1>
-        <p className={"productSubtitle"}>{category.subtitle}</p>
+    <section className="py-16 px-8 max-w-[1200px] mt-20 mx-auto flex flex-col gap-8">
+      <div className="text-center mb-8">
+        <h1 className="text-(--color-primary) text-2xl font-bold mb-2 mt-0">{category.title}</h1>
+        <p className="text-(--color-secondary) text-xl m-0">{category.subtitle}</p>
       </div>
 
-      <div className={"imagesContainer"}>
-        <img src={mainImage} alt={category.title} className={"mainImage"} />
-        <div className={"thumbnailContainer"}>
+      <div className="flex flex-col items-center gap-4">
+        <img src={mainImage} alt={category.title} className="w-full max-w-[600px] h-auto rounded-lg shadow-md" />
+        <div className="flex gap-4 justify-center flex-wrap">
           {category.images.map((image: string, index: number) => (
             <img
               key={index}
               src={image}
               alt={`${category.title} ${index + 1}`}
-              className={"thumbnail"}
+              className="w-[100px] h-[100px] rounded object-cover cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-md"
               onClick={() => setMainImage(image)}
               style={{
-                cursor: "pointer",
-                border: mainImage === image ? "2px solid #000" : "none",
+                border: mainImage === image ? '2px solid #000' : 'none',
               }}
             />
           ))}
         </div>
       </div>
 
-      <div className={"infoContainer"}>
-        <h2>General Information</h2>
-        <p>{category.description}</p>
+      <div className="bg-[#f9f9f9] p-8 rounded-lg shadow-md leading-relaxed">
+        <h2 className="text-xl font-bold mb-4 mt-0">General Information</h2>
+        <p className="text-base m-0">{category.description}</p>
       </div>
     </section>
   );
