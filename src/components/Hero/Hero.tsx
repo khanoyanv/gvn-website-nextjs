@@ -1,7 +1,6 @@
-import React from 'react';
 import { useRouter } from 'next/router';
 
-export const Hero: React.FC = () => {
+const Hero = () => {
   const router = useRouter();
 
   const handleViewProducts = () => {
@@ -31,3 +30,5 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
+
+export default Hero;

@@ -1,8 +1,8 @@
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 import "/styles/globals.css";
 import { AppProps } from "next/app";

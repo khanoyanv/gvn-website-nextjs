@@ -1,10 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-const Header: React.FC = () => {
+const Header = () => {
   const router = useRouter();
 
   const [isVisible, setIsVisible] = useState(true);
