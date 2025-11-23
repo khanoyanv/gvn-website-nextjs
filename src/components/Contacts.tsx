@@ -3,7 +3,6 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { phoneNumber } from '@/constants/contactInfo';
 // import { publicKey, serviceID, templateID } from '@/constants/mailApiData';
 import { NotificationModal } from './NotificationModal';
-import styles from './Contacts.module.css';
 
 export const Contacts = () => {
   const [formData, setFormData] = useState({
@@ -44,79 +43,99 @@ export const Contacts = () => {
       >
         <p>
           Please reach out via email directly at{' '}
-          <a href="mailto:info@gvnpro.com" className={styles.emailLink}>
+          <a
+            href="mailto:info@gvnpro.com"
+            className="text-(--color-primary) font-bold"
+          >
             info@gvnpro.com
           </a>
         </p>
       </NotificationModal>
-      <section id="contacts" className={styles.contactContainer}>
-        <div className={styles.formContainer}>
-          <h4 className={styles.subtitle}>Get in touch</h4>
-          <h2 className={styles.title}>{"We'd love to hear from you!"}</h2>
-          <form className={styles.contactForm} onSubmit={handleSubmit}>
-            <label className={styles.formLabel}>
+      <section
+        id="contacts"
+        className="flex flex-col md:flex-row items-start justify-between bg-[#e0e0e0] py-16 px-8 gap-8"
+      >
+        <div className="flex-[2] text-center md:text-left">
+          <h4 className="text-base font-bold text-(--color-primary) uppercase mb-4">
+            Get in touch
+          </h4>
+          <h2 className="text-(--color-muted) text-2xl font-bold mb-8 leading-tight">
+            {"We'd love to hear from you!"}
+          </h2>
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <label className="flex flex-col text-(--color-secondary) text-base">
               Name *
               <input
                 required={true}
                 type="text"
                 name="name"
                 placeholder="Jane Smith"
-                className={styles.input}
+                className="mt-2 p-3 text-base border border-[#ddd] rounded-md outline-none bg-white"
                 value={formData.name}
                 onChange={handleChange}
               />
             </label>
-            <label className={styles.formLabel}>
+            <label className="flex flex-col text-(--color-secondary) text-base">
               Email address *
               <input
                 required={true}
                 type="email"
                 name="email"
                 placeholder="email@example.com"
-                className={styles.input}
+                className="mt-2 p-3 text-base border border-[#ddd] rounded-md outline-none bg-white"
                 value={formData.email}
                 onChange={handleChange}
               />
             </label>
-            <label className={styles.formLabel}>
+            <label className="flex flex-col text-(--color-secondary) text-base">
               Phone number
               <input
                 type="tel"
                 name="phone"
                 placeholder="093-333-333"
-                className={styles.input}
+                className="mt-2 p-3 text-base border border-[#ddd] rounded-md outline-none bg-white"
                 value={formData.phone}
                 onChange={handleChange}
               />
             </label>
-            <label className={styles.formLabel}>
+            <label className="flex flex-col text-(--color-secondary) text-base">
               Message
               <textarea
                 name="message"
                 placeholder=""
-                className={styles.textarea}
+                className="mt-2 p-3 text-base border border-[#ddd] rounded-md outline-none resize-none h-[100px] bg-white"
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
             </label>
-            <button type="submit" className={styles.submitButton}>
+            <button
+              type="submit"
+              className="mt-4 px-6 py-3 text-base bg-white text-(--color-primary) border border-(--color-primary) rounded-md cursor-pointer transition-all hover:text-white hover:bg-(--color-primary)"
+            >
               Submit
             </button>
           </form>
         </div>
-        <div className={styles.infoContainer}>
-          <div className={styles.contactDetails}>
-            <h4>Get in touch</h4>
-            <p>
+        <div className="flex flex-col items-center md:items-start flex-1 mt-8 md:mt-16 gap-8 w-full md:w-auto">
+          <div className="text-(--color-secondary) text-left pl-0 md:pl-0 pl-[25%]">
+            <h4 className="mb-2 font-bold">Get in touch</h4>
+            <p className="text-sm text-[#333]">
               <strong>Mail:</strong>{' '}
-              <a href="mailto:info@gvn.com">info@gvnpro.com</a>
+              <a
+                href="mailto:info@gvn.com"
+                className="no-underline text-(--color-primary) font-bold"
+              >
+                info@gvnpro.com
+              </a>
             </p>
-            <p>
+            <p className="text-sm text-[#333]">
               <strong>Location:</strong> <label>Yerevan, Ye, AM</label>
             </p>
-            <p>{phoneNumber}</p>
-            <h4>Hours</h4>
-            <p>Monday - Saturday: 10:00am - 19:00pm</p>
+            <p className="text-sm text-[#333]">{phoneNumber}</p>
+            <h4 className="mb-2 font-bold mt-4">Hours</h4>
+            <p className="text-sm text-[#333]">
+              Monday - Saturday: 10:00am - 19:00pm
+            </p>
           </div>
         </div>
       </section>
