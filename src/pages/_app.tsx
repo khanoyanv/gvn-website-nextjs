@@ -4,7 +4,7 @@ import createCache from "@emotion/cache";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
-import "/styles/globals.css";
+import "../../styles/globals.css";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
