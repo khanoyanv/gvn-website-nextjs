@@ -1,4 +1,10 @@
-import React from 'react';
+import {
+  HEADING,
+  INTRO,
+  OUTRO,
+  PARTNER_NAME,
+  PARTNER_URL,
+} from './consts/content';
 
 const About = () => {
   return (
@@ -8,24 +14,19 @@ const About = () => {
     >
       <div className="flex flex-col items-center">
         <h2 className="mb-6 text-(--color-primary) leading-[1.2] text-2xl font-bold">
-          About Us
+          {HEADING}
         </h2>
         <p className="text-base leading-relaxed mb-8 text-[#555] w-full md:w-[70%] text-center">
-          GVN Pro company was founded in 2019 and is actively operating in
-          Yerevan, it specializes in professional audio, photo and video, media
-          equipment supply and sales. GVN Pro is the official representative of{' '}
+          {INTRO}{' '}
           <a
-            href="http://www.univiso.tv/en/index.html"
+            href={PARTNER_URL}
             target="_blank"
+            rel="noopener noreferrer"
             className="no-underline text-(--color-primary)"
           >
-            Univiso Technologies & Develop Ltd.
+            {PARTNER_NAME}
           </a>{' '}
-          The company cooperates with the leading companies, manufacturers,
-          offers and supports such brands as Sony, Panasonic, Samsung, Canon,
-          Manfrotto, Libec, DJI, Blackmagic, Sennheiser, Aja, Canare, Neutrik
-          etc. The GVN Pro is the supplier for the leading broadcast and media
-          companies in Armenia.
+          {OUTRO}
         </p>
       </div>
     </section>

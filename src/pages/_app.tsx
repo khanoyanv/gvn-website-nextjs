@@ -1,16 +1,12 @@
-import { CacheProvider } from "@emotion/react";
-import createCache from "@emotion/cache";
+import { AppProps } from 'next/app';
+import Head from 'next/head';
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
-import "../../styles/globals.css";
-import { AppProps } from "next/app";
-import Head from "next/head";
+import '../../styles/globals.css';
 
-const cache = createCache({ key: "css" });
-
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -43,13 +39,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="https://gvnpro.com/gvnpro-thumbnail.png"
         />
       </Head>
-      <CacheProvider value={cache}>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </CacheProvider>
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
-}
+};
 
 export default MyApp;

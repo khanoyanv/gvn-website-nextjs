@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+
 import { CATEGORY_DATA } from '@/constants/data';
+import { CATEGORY_PAGE } from '@/constants/content';
 
 const CategoryPage = () => {
   const { query } = useRouter();
@@ -19,7 +21,7 @@ const CategoryPage = () => {
   if (!categoryId || typeof categoryId !== 'string') {
     return (
       <div className="text-center mt-16 p-8 bg-red-100 rounded-lg text-red-800 shadow-md">
-        <h2 className="text-3xl font-bold mb-4">Loading...</h2>
+        <h2 className="text-3xl font-bold mb-4">{CATEGORY_PAGE.loading}</h2>
       </div>
     );
   }
@@ -27,10 +29,8 @@ const CategoryPage = () => {
   if (!category) {
     return (
       <div className="text-center mt-16 p-8 bg-red-100 rounded-lg text-red-800 shadow-md">
-        <h2 className="text-3xl font-bold mb-4">Category not found</h2>
-        <p className="text-base">
-          The category you are looking for does not exist.
-        </p>
+        <h2 className="text-3xl font-bold mb-4">{CATEGORY_PAGE.notFound}</h2>
+        <p className="text-base">{CATEGORY_PAGE.notFoundDescription}</p>
       </div>
     );
   }
@@ -73,7 +73,9 @@ const CategoryPage = () => {
       </div>
 
       <div className="bg-[#f9f9f9] p-8 rounded-lg shadow-md leading-relaxed">
-        <h2 className="text-xl font-bold mb-4 mt-0">General Information</h2>
+        <h2 className="text-xl font-bold mb-4 mt-0">
+          {CATEGORY_PAGE.generalInfoHeading}
+        </h2>
         <p className="text-base m-0">{category.description}</p>
       </div>
     </section>
